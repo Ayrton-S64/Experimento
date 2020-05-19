@@ -46,8 +46,15 @@ body{
     border: 0px;
     border-radius: 13px;
     box-shadow: 0px 0px 7px 3px white,
-                inset 0px 0px 8px 3px white;
-    
+                inset 0px 0px 8px 3px white;    
+}
+
+.interactible{
+    cursor: pointer;
+}
+
+.uninteractible{
+    cursor: initial;
 }
 
 .red{

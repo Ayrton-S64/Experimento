@@ -1,6 +1,7 @@
 let btns = document.querySelectorAll('.container__inputs--button');
 
 btns.forEach(e=>{
+    e.classList.add('interactible')
     e.addEventListener('mouseover',sabotear);
     e.addEventListener('click', trigger);
     (e.value==="SI")
@@ -25,8 +26,15 @@ function sabotear({target}){
 
 function trigger({target}) {
     if(target.value==="SI"){
-        alert("SABIA QUE ACEPTARIAS :D");
+        alert("SABIA QUE DIRIAS QUE SI :D");
+        setTimeout(()=>{
         window.close();
+        },2000);
+        btns.forEach(e=>{
+            e.classList.add('uninteractible');
+            e.removeEventListener('mouseover',sabotear);
+            e.removeEventListener('click',trigger);
+        })
     }
     else{
         console.log("un no pasó");
